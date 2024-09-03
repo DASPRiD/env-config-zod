@@ -38,6 +38,34 @@ it("should parse nested configs", () => {
     });
 });
 
+it("should allow optional values", () => {
+    const envConfig = parseEnvConfig(
+        {
+            foo: z.string().optional(),
+        },
+        "",
+        {},
+    );
+
+    expect(envConfig).toEqual({
+        foo: undefined,
+    });
+});
+
+it("should allow default values", () => {
+    const envConfig = parseEnvConfig(
+        {
+            foo: z.string().default("foo"),
+        },
+        "",
+        {},
+    );
+
+    expect(envConfig).toEqual({
+        foo: "foo",
+    });
+});
+
 it("should convert camel case to constant case", () => {
     const envConfig = parseEnvConfig(
         {
