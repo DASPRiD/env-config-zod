@@ -1,0 +1,71 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should collect nested issues 1`] = `
+[
+  {
+    "issues": [
+      {
+        "code": "invalid_type",
+        "expected": "string",
+        "message": "Required",
+        "path": [],
+        "received": "undefined",
+      },
+    ],
+    "name": "FOO",
+  },
+  {
+    "issues": [
+      {
+        "code": "invalid_type",
+        "expected": "string",
+        "message": "Required",
+        "path": [],
+        "received": "undefined",
+      },
+    ],
+    "name": "BAR_BAT",
+  },
+  {
+    "issues": [
+      {
+        "code": "invalid_type",
+        "expected": "string",
+        "message": "Required",
+        "path": [],
+        "received": "undefined",
+      },
+    ],
+    "name": "BAZ_BAT",
+  },
+]
+`;
+
+exports[`should emit combined issues 1`] = `
+[
+  {
+    "issues": [
+      {
+        "code": "invalid_type",
+        "expected": "string",
+        "message": "Required",
+        "path": [],
+        "received": "undefined",
+      },
+    ],
+    "name": "FOO",
+  },
+  {
+    "issues": [
+      {
+        "code": "invalid_type",
+        "expected": "string",
+        "message": "Required",
+        "path": [],
+        "received": "undefined",
+      },
+    ],
+    "name": "BAR",
+  },
+]
+`;
