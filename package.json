@@ -1,6 +1,6 @@
 {
   "name": "env-config-zod",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Environment config parser using Zod",
   "type": "module",
   "author": "Ben Scholzen 'DASPRiD'",
