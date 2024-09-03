@@ -1,4 +1,4 @@
-import type { z } from 'zod';
+import type { z } from "zod";
 
 // biome-ignore lint/suspicious/noExplicitAny: allowed in this specific case
 export type EnvZodType = z.ZodType<any, any, string>;
@@ -8,7 +8,11 @@ export type EnvConfigSchema = {
 };
 
 export type EnvConfig<T extends EnvConfigSchema> = {
-    [K in keyof T]: T[K] extends EnvConfigSchema ? EnvConfig<T[K]> : T[K] extends EnvZodType ? z.output<T[K]> : never;
+    [K in keyof T]: T[K] extends EnvConfigSchema
+        ? EnvConfig<T[K]>
+        : T[K] extends EnvZodType
+          ? z.output<T[K]>
+          : never;
 };
 
 type Identity<T> = T;

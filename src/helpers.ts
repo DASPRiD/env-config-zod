@@ -1,3 +1,5 @@
-import { z } from 'zod';
+import { z } from "zod";
 
-export const booleanSchema = z.string().transform((value) => value.toLowerCase() === "true" || value === "1");
+export const booleanSchema = z
+    .string()
+    .transform((value) => value.toLowerCase() === "true" || value === "1");

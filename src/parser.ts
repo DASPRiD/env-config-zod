@@ -1,6 +1,6 @@
 import * as changeCase from "change-case";
-import { z, type ZodIssue } from 'zod';
-import type { EnvConfig, EnvConfigSchema, Flatten } from './schema.js';
+import { type ZodIssue, z } from "zod";
+import type { EnvConfig, EnvConfigSchema, Flatten } from "./schema.js";
 
 export type EnvConfigIssue = {
     name: string;
@@ -17,7 +17,11 @@ export class EnvConfigError extends Error {
     }
 }
 
-export const parseEnvConfig = <T extends EnvConfigSchema>(schema: T, prefix = "", env = process.env): Flatten<EnvConfig<T>> => {
+export const parseEnvConfig = <T extends EnvConfigSchema>(
+    schema: T,
+    prefix = "",
+    env = process.env,
+): Flatten<EnvConfig<T>> => {
     const config: Record<string, unknown> = {};
     const issues: EnvConfigIssue[] = [];
 
